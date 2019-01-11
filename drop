@@ -1,0 +1,5 @@
+sudo service mysql restart
+mysql -u codaxtr_user codaxtr -pc0d@xtr -e "drop database $1"
+echo ">>>CODAXTR database dropped<<<"
+mysql -u codaxtr_user -pc0d@xtr -e "create database $1"
+mysql -u codaxtr_user codaxtr -pc0d@xtr < /home/codaxtr_user/codaxtr-extractor/src/db/codaxtr_schema.sql

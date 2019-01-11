@@ -1,0 +1,2 @@
+mysql -ucodaxtr_user codaxtr -pc0d@xtr -e "truncate $1"
+

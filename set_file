@@ -1,0 +1,3 @@
+# Usage: set_file {extractor_file} {extractor_type}
+#echo "insert into extractor(extractor_file_id) values(select id from extractor_file where file_name REGEXP '.*$1.*') where extractor_name REGEXP '.*$2.*'"
+mysql -ucodaxtr_user codaxtr -pc0d@xtr -e "update extractor set extractor_file_id=(select id from extractor_file where file_name REGEXP '.*$1.*') where extractor_name REGEXP '.*$2.*'"

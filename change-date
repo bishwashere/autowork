@@ -1,0 +1,13 @@
+echo $1, $2
+if [ $1 ]
+then
+sed -i s/2013-01-01/$1/ /home/codaxtr_user/codaxtr-extractor/src/extractor/pacer/pacer_appeal_and_district/pacer_extractor_pc_db/extractor_pc_db1.py
+sed -i s/2013-01-01/$1/ /home/codaxtr_user/codaxtr-extractor/src/extractor/pacer/pacer_bankruptcy/pacer_extractor_pc_bk/extractor_pc_bk1.py
+mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update county_court_option set filing_date_start='2007-01-01';"
+mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update county_court_option set filing_date_end='2050-12-31 0:0:0';"
+fi
+if [ $2 ]
+then
+sed -i s/2050-12-31/$2/ /home/codaxtr_user/codaxtr-extractor/src/extractor/pacer/pacer_appeal_and_district/pacer_extractor_pc_db/extractor_pc_db1.py
+fi
+

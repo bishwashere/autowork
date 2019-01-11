@@ -1,0 +1,2 @@
+chmod --reference=/home/codaxtr_user/bin/backup /home/codaxtr_user/bin/$1
+

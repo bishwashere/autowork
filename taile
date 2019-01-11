@@ -1,0 +1,6 @@
+if [ $# -eq 0 ]
+then
+	tail -f /var/log/supervisor/celery_error.log
+else
+	tail -n $1 /var/log/supervisor/celery_error.log
+fi

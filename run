@@ -1,0 +1,6 @@
+#echo "$(($1 - 1))"
+history -w /home/codaxtr_user/setup_scripts/all_history
+tail -n "$(($1 + 1))" /home/codaxtr_user/setup_scripts/all_history | head -n $1 > /home/codaxtr_user/setup_scripts/execute_file
+cat /home/codaxtr_user/setup_scripts/execute_file
+read -n 1 -s
+sh /home/codaxtr_user/setup_scripts/execute_file

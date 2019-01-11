@@ -1,0 +1,9 @@
+if [[ $2 ]];
+then
+mysql -u codaxtr_user codaxtr -pc0d@xtr -e "insert into pacer_import_case(case_number, mst_courthouse_id, pacer_case_id, is_local) VALUES ('$1', (select id from mst_courthouse where courthouse_key=LOWER('$2')), '$3', $4)"
+else
+mysql -u codaxtr_user codaxtr -pc0d@xtr -e "insert into pacer_import_case(case_number, mst_courthouse_id, pacer_case_id, is_local) select c.case_number, mst.id, cc.pacer_case_id, 1 from mst_courthouse mst inner join mst_courthouse_unresolved_courthouse_map map on mst.id=map.mst_courthouse_id inner join court_case_custom_fields cc on cc.unresolved_courthouse_id = map.unresolved_courthouse_id inner join courtcase c on c.id=cc.case_id where cc.case_id=$1"
+mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update courtcase set case_number=concat(case_number, '-', FLOOR( 1 + RAND( ) * 600 )) where id=$1;"
+mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update court_case_custom_fields set pacer_case_id=(FLOOR( 1 + RAND( ) * 600 )) where case_id=$1;"
+fi
+

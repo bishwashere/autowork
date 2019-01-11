@@ -1,0 +1,12 @@
+if [[ $2 ]];
+then
+backup_file_name="/home/codaxtr_user/setup_scripts/table_backups/""$1"".sql"
+restore_table_name="$2"
+else
+backup_file_name="/home/codaxtr_user/setup_scripts/table_backups/""$1"".sql"
+restore_table_name="$1"
+fi
+echo "$restore_table_name"
+echo "$backup_file_name"
+mysql -u codaxtr_user codaxtr -pc0d@xtr < $backup_file_name
+

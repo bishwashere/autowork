@@ -1,0 +1,10 @@
+if [[ $2 ]];
+then
+backup_file_name="/home/codaxtr_user/setup_scripts/table_backups/""$2"".sql"
+mysqldump -u codaxtr_user codaxtr -pc0d@xtr > $backup_file_name
+else
+backup_file_name="/home/codaxtr_user/setup_scripts/table_backups/""$1"".sql"
+mysqldump -u codaxtr_user codaxtr -pc0d@xtr $1 > $backup_file_name
+fi
+echo "$backup_file_name"
+

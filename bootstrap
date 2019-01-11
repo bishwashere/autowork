@@ -1,0 +1,10 @@
+echo "python bootstrap.py --$1"
+cd /home/codaxtr_user/codaxtr-extractor/src/
+if [ $# -eq 0 ]
+then
+	python /home/codaxtr_user/codaxtr-extractor/bootstrap.py
+elif [ $1 = 'pacer' ]
+then
+	python /home/codaxtr_user/codaxtr-extractor/bootstrap.py --$1
+fi
+

@@ -1,0 +1,15 @@
+if [ $# -eq 0 ]
+then
+	drop codaxtr
+	bootstrap pacer
+elif [ $1 = "training" ]
+then
+	python /home/codaxtr_user/codaxtr-extractor/src/bootstrap.py --pacer
+	mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update county_court_option set county_id=1 ,state_id=52 , filing_date_start='2007-01-01', filing_date_end='2018-12-31';"
+	restore mst_county
+	mysql -u codaxtr_user codaxtr -pc0d@xtr < /home/codaxtr_user/codaxtr-extractor/src/db/stored_procedure/county_specific_custom_fields.sql
+	restore extractor_setup_configuration	
+	restore county_court_option
+	change-date 2007-01-01
+fi
+

@@ -1,0 +1,8 @@
+if [ $1 == "pacer" ]
+then
+	echo "/home/codaxtr_user/codaxtr-extractor/src/extractor/pacer/pacer_appeal_and_district/pacer_extractor_pc_db"
+elif [ $1 == "codaxtr" ]
+then
+	echo "/home/codaxtr_user/codaxtr-extractor/src/"
+fi
+
