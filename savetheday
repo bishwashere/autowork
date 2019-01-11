@@ -1,9 +1,0 @@
-#!/bin/sh
-mkdir -p knowledge
-history | grep $(date +%F) > knowledge/$(date +%F).log
-git add knowledge
-git add knowledge/$(date +%F).log
-git add $(date +%F).log
-git commit -m "Today's knowledge for this technology"
-git push
-

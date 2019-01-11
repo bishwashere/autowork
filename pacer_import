@@ -1,5 +1,0 @@
-mysql -u codaxtr_user codaxtr -pc0d@xtr -e "
-	INSERT INTO pacer_import_case(case_number, mst_courthouse_id, pacer_case_id, is_local) VALUES (
-		'$1', (SELECT id FROM mst_courthouse WHERE courthouse_key=LOWER('$2')), '$3', $4
-	)"
-

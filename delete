@@ -1,4 +1,0 @@
-cd ~/codaxtr-extractor/patch/pacer/uc9185
-#echo "'delete', $1"
-echo "'delete', $1" > confirmed_duplicates.csv
-python delete_617_duplicates.py --state_key $2 --county_key $3 --update_database

@@ -1,8 +1,0 @@
-mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update docket_processing set error_type_id=NULL"
-mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update pacer_import_case set error_type_id=NULL"
-mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update refresh_by_case_number set error_type_id=NULL"
-mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update import_document set error_type_id=NULL"
-mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update update_docket_entry set error_type_id=NULL"
-mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update county_import_case set error_type_id=NULL"
-mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update parse_file set error_type_id=NULL"
-

@@ -1,1 +1,0 @@
-mysql -u codaxtr_user codaxtr -pc0d@xtr < /home/codaxtr_user/codaxtr-extractor/db/stored_procedure/county_specific_custom_fields.sql

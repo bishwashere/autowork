@@ -1,2 +1,0 @@
-mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update courtcase set case_number=CONCAT(case_number, RAND()*1000, '-dummy') where id='$1'"
-mysql -u codaxtr_user codaxtr -pc0d@xtr -e "update court_case_custom_fields set pacer_case_id=pacer_case_id+RAND()*1000 where case_id='$1'"

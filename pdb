@@ -1,2 +1,0 @@
-sed -i "$2s/\(\b\)/import pdb; pdb.set_trace(); \1/" $1
-
